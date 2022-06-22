@@ -1,0 +1,14 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Learning Deploy NodeJS Application to Cloud Run",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hazlan Muhammad Qodri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

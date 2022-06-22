@@ -1,0 +1,63 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello-world-1
+  namespace: '384459261198'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/384459261198/services/hello-world-1
+  uid: b8c1685d-3e60-41b1-80d4-f083649e6375
+  resourceVersion: AAXiAdyHO+g
+  generation: 1
+  creationTimestamp: '2022-06-22T04:33:19.712049Z'
+  labels:
+    cloud.googleapis.com/location: us-central1
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: hazlanqodri2020work@gmail.com
+    serving.knative.dev/lastModifier: hazlanqodri2020work@gmail.com
+    client.knative.dev/user-image: gcr.io/sublime-vine-348910/hello-world-1@sha256:22c45d83e4f95859f857cbcf97896bd77d0269ddeab577cd318c7507b822e936
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+spec:
+  template:
+    metadata:
+      name: hello-world-1-00001-cos
+      annotations:
+        run.googleapis.com/client-name: cloud-console
+        autoscaling.knative.dev/maxScale: '100'
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 384459261198-compute@developer.gserviceaccount.com
+      containers:
+      - image: gcr.io/sublime-vine-348910/hello-world-1@sha256:22c45d83e4f95859f857cbcf97896bd77d0269ddeab577cd318c7507b822e936
+        ports:
+        - name: http1
+          containerPort: 80
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+  traffic:
+  - percent: 100
+    latestRevision: true
+status:
+  observedGeneration: 1
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2022-06-22T04:35:06.049541Z'
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2022-06-22T04:35:05.975838Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2022-06-22T04:35:06.248168Z'
+  latestReadyRevisionName: hello-world-1-00001-cos
+  latestCreatedRevisionName: hello-world-1-00001-cos
+  traffic:
+  - revisionName: hello-world-1-00001-cos
+    percent: 100
+    latestRevision: true
+  url: https://hello-world-1-jnyukchrua-uc.a.run.app
+  address:
+    url: https://hello-world-1-jnyukchrua-uc.a.run.app
